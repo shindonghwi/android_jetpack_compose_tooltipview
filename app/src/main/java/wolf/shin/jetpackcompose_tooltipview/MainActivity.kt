@@ -3,13 +3,11 @@ package wolf.shin.jetpackcompose_tooltipview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
 import wolf.shin.jetpackcompose_tooltipview.ui.theme.JetpackCompose_ToolTipViewTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,24 +15,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackCompose_ToolTipViewTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+
+                Column(modifier = Modifier.fillMaxSize()) {
+
+                    ToolTip(
+                        component = getToolTipComponent(
+                            style = ToolTipStyle.TITLE,
+                            direction = ToolTipDirection.CENTER_BOTTOM,
+                            backgroundColor = Color.Blue,
+                            title = ToolTipText("title", Color.Red, MaterialTheme.typography.subtitle2),
+                            content = ToolTipText("content", Color.Red, MaterialTheme.typography.subtitle2),
+                        )
+                    )
+
                 }
+
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    JetpackCompose_ToolTipViewTheme {
-        Greeting("Android")
     }
 }
