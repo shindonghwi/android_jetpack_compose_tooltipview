@@ -2,6 +2,8 @@ package wolf.shin.jetpackcompose_tooltipview
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import org.jetbrains.annotations.NotNull
 
 data class ToolTipComponent(
@@ -10,7 +12,8 @@ data class ToolTipComponent(
     val backgroundColor: Color,
     val title: ToolTipText? = null,
     val content: ToolTipText,
-    val icon: ToolTipIcon? = null
+    val icon: ToolTipIcon? = null,
+    val cornerRoundValue: Dp = 3.dp
 )
 
 fun getToolTipComponent(
@@ -19,7 +22,8 @@ fun getToolTipComponent(
     backgroundColor: Color,
     title: ToolTipText? = null,
     content: ToolTipText,
-    icon: ToolTipIcon? = null // 아이콘 drawable
+    icon: ToolTipIcon? = null, // 아이콘 drawable
+    cornerRoundValue: Dp = 3.dp
 ): ToolTipComponent {
     return ToolTipComponent(
         style = style,
@@ -27,7 +31,8 @@ fun getToolTipComponent(
         backgroundColor = backgroundColor,
         title = title,
         content = content,
-        icon = icon
+        icon = icon,
+        cornerRoundValue = cornerRoundValue
     )
 }
 

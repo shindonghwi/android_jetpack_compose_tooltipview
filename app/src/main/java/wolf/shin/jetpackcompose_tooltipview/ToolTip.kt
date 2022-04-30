@@ -135,7 +135,7 @@ private fun ContentView(modifier: Modifier, component: ToolTipComponent) {
             Modifier
                 .background(
                     color = component.backgroundColor,
-                    shape = RoundedCornerShape(3.dp)
+                    shape = RoundedCornerShape(component.cornerRoundValue)
                 )
         ),
         constraintSet = ConstraintSet {

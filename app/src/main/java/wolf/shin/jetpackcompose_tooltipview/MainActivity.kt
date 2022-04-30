@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         component = getToolTipComponent(
                             style = ToolTipStyle.TITLE,
                             direction = ToolTipDirection.CENTER_BOTTOM,
-                            backgroundColor = Color.random(),
+                            backgroundColor = Color.Black,
                             title = ToolTipText("안녕하세요 Android 개발자 신동휘입니다 :)", Color.White, MaterialTheme.typography.subtitle1),
                             content = ToolTipText("\n\n" +
                                     "Phone: 010-8940-6835\n" +
@@ -53,9 +53,11 @@ class MainActivity : ComponentActivity() {
                                     "github: https://github.com/shindonghwi", Color.White, MaterialTheme.typography.body2),
                             icon = if (SecureRandom().nextInt(2) == 0) ToolTipIcon(img = R.drawable.ic_info, tint = Color.White) {
                                 Toast.makeText(this@MainActivity, "Icon Click", Toast.LENGTH_LONG).show()
-                            } else null
+                            } else null,
+                            cornerRoundValue = 20.dp
                         )
                     )
+
                     directionList.forEachIndexed { index, direction ->
 
                         Row(modifier = Modifier
