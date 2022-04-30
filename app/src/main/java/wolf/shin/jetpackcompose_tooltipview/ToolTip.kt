@@ -3,6 +3,7 @@ package wolf.shin.jetpackcompose_tooltipview
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -221,7 +222,7 @@ private fun ContentView(modifier: Modifier, component: ToolTipComponent) {
             Icon(
                 modifier = Modifier
                     .layoutId("button")
-                    .clickable { toolTipIcon.event?.let { it() } }
+                    .clickable(interactionSource = MutableInteractionSource(), indication = null) { toolTipIcon.event?.let { it() } }
                     .size(
                         width = 16.dp,
                         height = if (component.style == ToolTipStyle.TITLE) {
