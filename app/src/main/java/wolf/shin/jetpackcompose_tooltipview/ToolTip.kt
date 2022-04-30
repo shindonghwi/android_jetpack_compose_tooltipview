@@ -194,16 +194,19 @@ private fun ContentView(modifier: Modifier, component: ToolTipComponent) {
 
         }
     ) {
-        /** 제목 */
-        component.title?.let {
-            Text(
-                text = it.text,
-                modifier = Modifier.layoutId("title"),
-                color = it.textColor,
-                textAlign = TextAlign.Start,
-                style = component.title.textStyle
-            )
+        if (component.style == ToolTipStyle.TITLE) {
+            /** 제목 */
+            component.title?.let {
+                Text(
+                    text = it.text,
+                    modifier = Modifier.layoutId("title"),
+                    color = it.textColor,
+                    textAlign = TextAlign.Start,
+                    style = component.title.textStyle
+                )
+            }
         }
+
 
         /** 내용 */
         Text(
