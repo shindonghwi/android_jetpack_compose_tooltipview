@@ -43,7 +43,7 @@ if ( your version >= Arctic Fox ) {
 ### 2. Add Dependency in Your App Module 
 ```
 dependencies {
-    implementation 'com.github.shindonghwi:JetpackCompose_ToolTipView:1.0.1'
+    implementation 'com.github.shindonghwi:JetpackCompose_ToolTipView:1.0.2'
 }
 ```
 <br/>
