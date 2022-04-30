@@ -9,8 +9,47 @@
 
 ## Usage
 
+### 1. Setting jitpack
 ```
-# Sample
+
+if ( your version >= Arctic Fox ) {
+
+    // root - setting.gradle
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            google()
+            mavenCentral()
+            maven { url "https://jitpack.io" }
+            jcenter()
+        }
+    }
+
+} else {
+
+    // root - build.gradle
+    	allprojects {
+        repositories {
+          ...
+          maven { url 'https://jitpack.io' }
+        }
+      }
+
+}
+
+```
+<br/>
+
+### 2. Add Dependency in Your App Module 
+```
+dependencies {
+    implementation 'com.github.shindonghwi:JetpackCompose_ToolTipView:1.0.0'
+}
+```
+<br/>
+
+### 3. Sample
+```
 ToolTip(
     modifier: Modifier.padding(top = 6.dp),
     component = getToolTipComponent(
@@ -27,10 +66,8 @@ ToolTip(
 )
 ```
 
+### 4. Parameter Description
 ```
-
-Decription parameter
-
 getToolTipComponent inner Params
 
   1. style => ToolTipStyle.Title or ToolTipStyle.Default // you want title is showing or hiding 
@@ -54,7 +91,6 @@ getToolTipComponent inner Params
   
   7. cornerRoundValue = Tooltip Edge RoundedCorner Value
 ```
-
 
 <br/><br/>
 
