@@ -34,6 +34,13 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+    publishing {
+        multipleVariants {
+            withSourcesJar()
+            withJavadocJar()
+            allVariants()
+        }
+    }
 }
 
 dependencies {
@@ -49,4 +56,17 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.activity:activity-compose:1.4.0'
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.shindonghwi'
+                artifactId = 'tooltip'
+                version = '1.0.3'
+            }
+        }
+    }
 }
