@@ -218,7 +218,7 @@ private fun ContentView(modifier: Modifier, component: ToolTipComponent) {
             Icon(
                 modifier = Modifier
                     .layoutId("button")
-                    .clickable { it.third() }
+                    .clickable { it.event }
                     .size(
                         width = 16.dp,
                         height = if (component.style == ToolTipStyle.TITLE) {
@@ -234,8 +234,8 @@ private fun ContentView(modifier: Modifier, component: ToolTipComponent) {
                             4.dp
                         }
                     ),
-                tint = it.second,
-                painter = painterResource(id = it.first),
+                tint = it.tint,
+                painter = painterResource(id = it.img),
                 contentDescription = "icon"
             )
         }

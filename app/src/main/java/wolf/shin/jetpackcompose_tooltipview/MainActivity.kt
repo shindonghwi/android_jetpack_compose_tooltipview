@@ -22,9 +22,10 @@ class MainActivity : ComponentActivity() {
                         component = getToolTipComponent(
                             style = ToolTipStyle.TITLE,
                             direction = ToolTipDirection.CENTER_BOTTOM,
-                            backgroundColor = Color.Blue,
-                            title = ToolTipText("title", Color.Red, MaterialTheme.typography.subtitle2),
-                            content = ToolTipText("content", Color.Red, MaterialTheme.typography.subtitle2),
+                            backgroundColor = Color.Black,
+                            title = ToolTipText("I'm ToolTip Title", Color.White, MaterialTheme.typography.subtitle1),
+                            content = ToolTipText("I'm ToolTip Content", Color.White, MaterialTheme.typography.body2),
+                            icon = Triple(R.drawable.ic_info, Color.White) {}
                         )
                     )
 
