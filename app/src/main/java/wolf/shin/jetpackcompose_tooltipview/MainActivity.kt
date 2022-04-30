@@ -35,8 +35,27 @@ class MainActivity : ComponentActivity() {
 
                 Column(modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(rememberScrollState())) {
+                    .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
 
+                    ToolTip(
+                        modifier = Modifier.padding(top = 6.dp),
+                        component = getToolTipComponent(
+                            style = ToolTipStyle.TITLE,
+                            direction = ToolTipDirection.CENTER_BOTTOM,
+                            backgroundColor = Color.random(),
+                            title = ToolTipText("안녕하세요 Android 개발자 신동휘입니다 :)", Color.White, MaterialTheme.typography.subtitle1),
+                            content = ToolTipText("\n\n" +
+                                    "Phone: 010-8940-6835\n" +
+                                    "email: shindonghwi8940@gmail.com\n" +
+                                    "blog: https://medium.com/@wolf-android-developer\n" +
+                                    "github: https://github.com/shindonghwi", Color.White, MaterialTheme.typography.body2),
+                            icon = if (SecureRandom().nextInt(2) == 0) ToolTipIcon(img = R.drawable.ic_info, tint = Color.White) {
+                                Toast.makeText(this@MainActivity, "Icon Click", Toast.LENGTH_LONG).show()
+                            } else null
+                        )
+                    )
                     directionList.forEachIndexed { index, direction ->
 
                         Row(modifier = Modifier
