@@ -1,4 +1,4 @@
-package wolf.shin.jetpackcompose_tooltipview
+package wolf.shin.tooltip
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle

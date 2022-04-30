@@ -1,4 +1,4 @@
-package wolf.shin.jetpackcompose_tooltipview
+package wolf.shin.tooltip
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
